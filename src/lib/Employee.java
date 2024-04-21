@@ -13,6 +13,12 @@ public class Employee {
         PEREMPUAN
     }
 
+    private enum Grade {
+        LOW,
+        MEDIUM,
+        HIGH
+    }
+
     private String employeeId;
 
     private Person employeeData;
@@ -48,18 +54,18 @@ public class Employee {
      * Jika pegawai adalah warga negara asing gaji bulanan diperbesar sebanyak 50%
      */
 
-    public void setMonthlySalary(int grade) {
-        if (grade == 1) {
+    public void setMonthlySalary(Grade grade) {
+        if (grade == Grade.LOW) {
             monthlySalary = 3000000;
             if (isForeigner) {
                 monthlySalary = (int) (3000000 * 1.5);
             }
-        }else if (grade == 2) {
+        }else if (grade == Grade.MEDIUM) {
             monthlySalary = 5000000;
             if (isForeigner) {
                 monthlySalary = (int) (3000000 * 1.5);
             }
-        }else if (grade == 3) {
+        }else if (grade == Grade.HIGH) {
             monthlySalary = 7000000;
             if (isForeigner) {
                 monthlySalary = (int) (3000000 * 1.5);
